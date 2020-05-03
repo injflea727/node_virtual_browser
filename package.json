@@ -1,0 +1,12 @@
+{
+  "name": "node_virtual_browser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^7.1.2"
+  }
+}
