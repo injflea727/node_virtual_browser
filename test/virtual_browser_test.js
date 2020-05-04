@@ -100,7 +100,7 @@ describe('VirtualBrowser', function () {
         const state = {
         };
         const loaders = {
-            "text/javascript": {
+            "script": {
                 load: async function(browser, resource) {
                     return new Promise((resolve, reject) => {
                         resolve(`console.log("loaded");`); // mock load js file, return js code
