@@ -93,4 +93,22 @@ describe('VirtualBrowser', function () {
         assert.equal(window.document.cookie.indexOf("ck1key=ck1value;"), -1);
         assert.equal(window.document.cookie.indexOf("ck2key=ck2value;"), -1);
     });
+
+
+    /*
+    it('create Plugin array', function () {
+
+        const pluginArray = new PluginArray();
+        assert.equal(pluginArray.length, 0);
+
+        pluginArray.add(new Plugin("plugin-name", "plugin-filename", "plugin-description"));
+        assert.equal(pluginArray.length, 1);
+        assert.equal(pluginArray[0].name, "plugin-name");
+        assert.equal(pluginArray["plugin-name"].filename, "plugin-filename");
+
+        for (var i = 0; i < pluginArray.length; i++) {
+            console.log("Plugin", i, pluginArray[i]);
+        }
+    });
+    */
 });
