@@ -94,6 +94,42 @@ describe('VirtualBrowser', function () {
         assert.equal(window.document.cookie.indexOf("ck2key=ck2value;"), -1);
     });
 
+    it("js loader", function () {
+        const props = {
+        };
+        const state = {
+        };
+        const loaders = {
+            "text/javascript": {
+                load: async function(resource) {
+                    return new Promise((resolve, reject) => {
+                        resolve(`console.log("loaded");`); // mock load js file, return js code
+                    });
+                }
+            },
+        };
+        const browser = new VirtualBrowser(props, state, loaders);
+
+        /*
+        browser.setHTML(
+            "<html>"
+            + "<head></head>"
+            + "<body></body>"
+            + "</html>"
+        );
+        */
+
+        // create a <script> dom elem to load a new js
+        browser.evalJavascriptCode(
+              'var head = document.getElementsByTagName("head")[0];'
+            + 'var elem = document.createElement("script");'
+            + 'elem.setAttribute("language", "javascript");'
+            + 'elem.setAttribute("type", "text/javascript");'
+            + 'elem.setAttribute("src", "http://www.google.com/test.js");'
+            + "head.appendChild(elem);"
+        );
+    });
+
 
     /*
     it('create Plugin array', function () {
